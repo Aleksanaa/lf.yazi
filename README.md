@@ -2,6 +2,10 @@
 
 Make yazi look like [lf](https://github.com/gokcehan/lf) for no reason.
 
+<img width="2495" height="1600" alt="image" src="https://github.com/user-attachments/assets/fd05f9b7-e8ae-4f0c-af4d-0dfed695a5af" />
+
+> Can you tell which one is yazi? At least [@sxyazi](https://github.com/sxyazi/) cannot...
+
 ## Installation
 
 Copy or clone this directory to `~/.config/yazi/plugins/lf.yazi`, then add this
