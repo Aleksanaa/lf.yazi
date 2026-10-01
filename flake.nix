@@ -10,7 +10,6 @@
     systems = import inputs.systems;
 
     perSystem = { lib, pkgs, ... }: {
-
       packages.default = pkgs.yaziPlugins.mkYaziPlugin {
         pname = "lf.yazi";
         version = "0";
@@ -24,6 +23,14 @@
           license = lib.licenses.mit;
           maintainers = with lib.maintainers; [ aleksana ];
         };
+      };
+
+      apps.default = {
+        type = "app";
+        program = toString (pkgs.writeShellScript "lf-yazi-test" ''
+          PATH=${lib.makeBinPath [ pkgs.yazi ]}:$PATH
+          exec ${lib.getExe pkgs.bash} ${inputs.self}/test.sh "$@"
+        '');
       };
 
       formatter = pkgs.writeShellScriptBin "formatter" ''
